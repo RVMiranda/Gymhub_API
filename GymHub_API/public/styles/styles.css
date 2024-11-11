@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root {
+    --color-verde: #AEFF5C;
+    --color-lima: #D6FFAC;
+    --text-box: #010102;
+    --Fondo: #0c0c139c;
+    --Error: none;
+}
+
+#ErrorCredenciales {
+    display: var(--Error);
+    margin-top: 1.5rem;
+    color: #FFA9A9;
+    text-align: center;
+}
+
+body {
+    background-color: #0b0b11;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido {
+    font-family: Satoshi-Regular, "Inter", sans-serif;
+}
+
+.inter {
+    font-family: "Inter", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+#contenedorP {
+    z-index: 10;
+    border-radius: 10px;
+    margin-top: 8rem;
+    width: 35rem; 
+    height: 45rem;
+    background: var(--Fondo);
+    /*background-color: #29E9F0;*/
+}
+
+#logo {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el texto y las imágenes */
+}
+#logo img {
+    width: 24px; /* Ajusta el tamaño de las imágenes de pesas si es necesario */
+    height: auto;
+}
+
+/* Contenedor del h2 si es necesario */
+.titulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff; /* Ajusta el color si es necesario */
+    margin-top: 10px; /* Ajusta el margen según necesites */
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente si es necesario */
+}
+
+/* Aplicar directamente al h2 */
+h2 {
+    text-align: center;
+    color: #ffffff;
+    margin-top: 10px;
+    font-size: 1.2em;
+}
+
+
+
+.Datos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#User {
+    margin-top: 2rem;
+    width: 16rem;
+    height: auto;
+}
+
+.textbox {
+    margin-top: 1rem;
+    margin-bottom: 1.4rem;
+    padding-left: 1rem;
+    width: 15rem;
+    height: 2.5rem;
+    border-inline: none;
+    border-radius: 5px;
+    border: 1px solid #444;
+    background: var(--text-box);
+    color: var(--color-verde);
+}
+
+#olvidarcontraseña {
+    color: #A0A2B1;
+    font-size: 0.8rem;
+}
+
+#boton {
+    margin-top: 2rem;
+    width: 100%;
+    height: 3rem;
+    border-radius: 12px;
+    border:none;
+    background-color: var(--color-verde);
+    color: var(--text-box);
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-size: 0.96rem;
+    transition-duration: 80ms;
+}
+
+#boton:hover {
+    background-color: var(--color-lima);
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 1rem;
+    color: var(--Fondo)
+}
+  
+
+.ellipse1 {
+    overflow: hidden;
+    width: 278.077px;
+    height: 278.402px;
+    transform: rotate(165.463deg);
+    flex-shrink: 0;
+    border-radius: 278.402px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.54) 100%), linear-gradient(198deg, #28FF28 4.32%, #FFFA63 46.05%, #29E9F0 87.78%);
+    filter: blur(58.20000076293945px);
+    z-index: 1; /* Nivel inferior */
+}
+
+.ellipse1 {
+    position: fixed;
+    left: 90%;
+    top: 30%;
+}
+
+.ellipse2 {
+    overflow: hidden;
+    width: 500px;
+    height: 500px;
+    transform: rotate(-22.643deg);
+    flex-shrink: 0;
+    border-radius: 500px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.54) 0%, rgba(0, 0, 0, 0.54) 100%), linear-gradient(198deg, #FF2828 4.32%, #FF63CB 46.05%, #4729F0 87.78%);
+    filter: blur(58.20000076293945px); 
+    z-index: 1; /* Nivel inferior */
+}
+
+.ellipse2 {
+    position: fixed;
+    left: -15%;
+    top: 50%;
+}
+
+@media (max-width: 1010px) { /*Para telefonos*/
+    .ellipse2 {
+        position: fixed;
+        left: -45%;
+        top: 50%;
+    }
+    #contenedorP {
+        width: 30rem; 
+        height: 40rem;
+    }
+}
