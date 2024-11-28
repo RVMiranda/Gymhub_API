@@ -52,6 +52,25 @@ class TrabajadorSeeder extends Seeder
 
         $trabajador->save();
 
+        //sera de entrenador
+        $trabajador = new Trabajador();
+        $trabajador->nombre = 'Renzo';
+        $trabajador->apellido_p = 'De Alba';
+        $trabajador->apellido_m = 'Castellanos';
+        $trabajador->ine = 'DECA1234569';
+        $trabajador->telefono = '99945689';
+        $trabajador->correo_e = 'renzinho@example.com';
+        do {
+            $initials = strtoupper(substr($trabajador->nombre, 0, 2) . substr($trabajador->apellido_p, 0, 1) . substr($trabajador->apellido_m, 0, 1));
+            $randomNumber = mt_rand(10000, 99999);
+            $matricula = $initials . $randomNumber;
+        } while (Trabajador::where('matricula', $matricula)->exists());
+        $trabajador->matricula = $matricula;
+        $trabajador->activo = true;
+        $trabajador->fecha_contratacion = now();
+
+        $trabajador->save();
+
         
     }
 }

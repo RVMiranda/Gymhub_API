@@ -12,4 +12,21 @@ class TrabajadorController extends Controller
     {
         return response()->json(['status' => 'ok', 'data' => Trabajador::all()]);
     }
+
+    public function show($id)
+    {
+        // Buscar el trabajador por su ID
+        $trabajador = Trabajador::find($id);
+
+        // Validar si se encuentra el trabajador
+        if (!$trabajador) {
+            return response()->json(['status' => 'error', 'message' => 'Trabajador no encontrado'], 404);
+        }
+
+        // Devolver la información del trabajador encontrado
+        return response()->json(['status' => 'ok', 'data' => $trabajador], 200);
+    }
+
+
+    
 }

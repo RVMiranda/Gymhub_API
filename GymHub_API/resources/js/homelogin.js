@@ -1,11 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const userIcon = document.querySelector('.header-icon');
     
-    if (userIcon) {
-        userIcon.addEventListener('click', function() {
-            window.location.href = '/home-login'; // Cambia 'login.html' a la URL de la página de inicio de sesión
-        });
-    }
 });
 
 document.addEventListener("DOMContentLoaded", function () {

@@ -39,5 +39,13 @@ class AccTrabajadorSeeder extends Seeder
 
         $AccesoTrabajador->save();
 
+        $AccesoTrabajador = new AccesoTrabajador();
+        $AccesoTrabajador->usuario = 'Renzinho';
+        $AccesoTrabajador->password = Hash::make('r1234');
+        $AccesoTrabajador->id_trabajador = 3;
+        $AccesoTrabajador->id_tipo_acceso = 2;
+
+        $AccesoTrabajador->save();
+
     }
 }

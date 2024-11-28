@@ -1,3 +1,10 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #121212;
@@ -7,6 +14,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 header {
@@ -142,4 +150,105 @@ footer p {
     color: #ffffff;
     font-size: 0.9em;
     margin: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px; /* Espacio para el footer */
+}
+
+/* ------------------------------------------------------------------ */
+.dashboard {
+    display: flex;
+    flex-direction: row; /* Cambia a una fila horizontal */
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    padding: 20px;
+    justify-content: center; /* Centra los cuadros en la pantalla */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan si el espacio es limitado */
+}
+
+.dashboard-card {
+    background-color: #aaff00;
+    color: #121212;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px; /* Ajusta el ancho de cada tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.dashboard-card h3 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.dashboard-card p {
+    margin: 10px 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+
+.dashboard-card {
+    background-color: #aaff00;
+    color: #121212;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px; /* Limita el ancho máximo de cada tarjeta */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.dashboard-card h3 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.dashboard-card p {
+    margin: 10px 0;
+    font-size: 1em;
+    font-weight: 300;
+}
+
+.nav-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: #aaff00;
+}
+
+.nav-menu a.active {
+    color: #aaff00;
+    font-weight: bold;
+    border-bottom: 2px solid #aaff00;
+}
+
+
+.page-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.page-title h2 {
+    color: #aaff00; /* Color de tu página */
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif; /* Reutiliza la fuente de la página */
+    text-transform: uppercase;
+    margin: 0;
+    padding: 10px;
+    border-bottom: 2px solid #aaff00; /* Línea decorativa debajo del título */
 }

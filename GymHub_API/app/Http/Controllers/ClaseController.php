@@ -2,26 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Entrenador;
+use App\Models\Clase;
 use Illuminate\Http\Request;
 
-class EntrenadorController extends Controller
+class ClaseController extends Controller
 {
     //
-    public function dashboard()
-    {
-        return view('entrenador.dashboard');
-    }
-
     public function index() // metodo GET
     {
-        return response()->json(['status' => 'ok', 'data' => Entrenador::all()]);
+        return response()->json(['status' => 'ok', 'data' => Clase::all()]);
     }
 
     public function show($id)
     {
         // Buscar la clase por su ID
-        $clase = Entrenador::find($id);
+        $clase = Clase::find($id);
 
         // Validar si se encuentra la clase
         if (!$clase) {

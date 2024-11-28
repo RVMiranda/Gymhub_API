@@ -23,21 +23,34 @@
             <h1>GYMHUB</h1>
         </div>
         <nav class="nav-menu">
-            <a href="#">Inicio</a>
+            {{-- <a href="#">Inicio</a>
             <a href="#">Entrenadores</a>
             <a href="#">Trabajadores</a>
             <a href="#">Membresías</a>
             <a href="#">Marketing</a>
-            <a href="#">Facturación</a>
+            <a href="#">Facturación</a> --}}
         </nav>
+        {{-- <nav class="nav-menu">
+            <a href="{{ route('admin/dashboard') }}" class="{{ request()->is('inicio') ? 'active' : '' }}">Inicio</a>
+            <a href="{{ route('entrenadores') }}" class="{{ request()->is('entrenadores') ? 'active' : '' }}">Entrenadores</a>
+            <a href="{{ route('trabajadores') }}" class="{{ request()->is('trabajadores') ? 'active' : '' }}">Trabajadores</a>
+            <a href="{{ route('membresias') }}" class="{{ request()->is('membresias') ? 'active' : '' }}">Membresías</a>
+            <a href="{{ route('marketing') }}" class="{{ request()->is('marketing') ? 'active' : '' }}">Marketing</a>
+            <a href="{{ route('facturacion') }}" class="{{ request()->is('facturacion') ? 'active' : '' }}">Facturación</a>
+        </nav> --}}
+        
         <div class="header-profile">
             <p>Hola, <span>Diego</span> :)</p>
-            <img src="profile-picture.jpg" alt="Foto de perfil">
+            <img src="profile-picture.jpg" alt="Foto">
         </div>
     </header>
     
+    <div class="page-title">
+        <h2>Administrador Dashboard</h2>
+    </div>
+
     <main>
-        <aside class="sidebar">
+        {{-- <aside class="sidebar">
             <button class="sidebar-button" title="Resumen">
                 <i class="icon">&#8962;</i>
             </button>
@@ -50,38 +63,38 @@
             <button class="sidebar-button" title="Ubicación">
                 <i class="icon">&#128205;</i>
             </button>
-        </aside>
+        </aside> --}}
         
         <section class="dashboard">
             <div class="dashboard-card">
                 <h3>23</h3>
                 <p>Cancelaciones en este mes</p>
-                <img src="chart1.png" alt="Gráfica de cancelaciones">
-                <span>Ultimos 3 meses</span>
+                {{-- <img src="chart1.png" alt="Gráfica de cancelaciones">
+                <span>Ultimos 3 meses</span> --}}
             </div>
             <div class="dashboard-card">
                 <h3>63</h3>
                 <p>Renovaciones en este mes</p>
-                <img src="chart2.png" alt="Gráfica de renovaciones">
-                <span>Ultimos 3 meses</span>
+                {{-- <img src="chart2.png" alt="Gráfica de renovaciones">
+                <span>Ultimos 3 meses</span> --}}
             </div>
             <div class="dashboard-card">
                 <h3>24</h3>
                 <p>Nuevos miembros en este mes</p>
-                <img src="chart3.png" alt="Gráfica de nuevos miembros">
-                <span>Ultimos 3 meses</span>
+                {{-- <img src="chart3.png" alt="Gráfica de nuevos miembros">
+                <span>Ultimos 3 meses</span> --}}
             </div>
             <div class="dashboard-card">
                 <h3>2,154</h3>
                 <p>Miembros activos</p>
-                <img src="chart4.png" alt="Gráfica de miembros activos">
-                <span>Ultimos 6 meses</span>
+                {{-- <img src="chart4.png" alt="Gráfica de miembros activos">
+                <span>Ultimos 6 meses</span> --}}
             </div>
             <div class="dashboard-card">
                 <h3>$184,050 mxn</h3>
                 <p>Ingresos generados este mes</p>
-                <img src="chart5.png" alt="Gráfica de ingresos">
-                <span>Ultimos 6 meses</span>
+                {{-- <img src="chart5.png" alt="Gráfica de ingresos">
+                <span>Ultimos 6 meses</span> --}}
             </div>
         </section>
     </main>

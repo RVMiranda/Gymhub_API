@@ -273,3 +273,47 @@ footer p {
     font-size: 0.9em;
     margin: 0;
 }
+
+
+.page-title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.page-title h2 {
+    color: #aaff00; /* Color de tu página */
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif; /* Reutiliza la fuente de la página */
+    text-transform: uppercase;
+    margin: 0;
+    padding: 10px;
+    border-bottom: 2px solid #aaff00; /* Línea decorativa debajo del título */
+}
+
+/* Contenedor general para organizar las secciones en dos filas */
+.vip-member-section {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin: 30px;
+    width: 90%;
+}
+
+/* Añadir una clase para la fila inferior */
+.classes-section {
+    width: 90%;
+    display: flex;
+    justify-content: center; /* Centramos el contenedor */
+    margin-top: 20px;
+}
+
+.personal-classes {
+    width: 60%; /* Ajustamos el ancho para que no sea muy grande */
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+

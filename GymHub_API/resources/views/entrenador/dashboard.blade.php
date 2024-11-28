@@ -15,24 +15,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/entrenadordashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('styles/fonts/Satoshi/WEB/css/satoshi.css') }}">
-    @vite(['resources/js/homelogin.js'])
+    @vite(['resources/js/entrenadordashboard.js'])
 </head>
 <body>
     <header>
         <div class="header-logo">
             <h1>GYMHUB</h1>
         </div>
-        <nav class="nav-menu">
+        {{-- <nav class="nav-menu">
             <a href="#">Inicio</a>
             <a href="#">Miembros VIP</a>
             <a href="#">Clases personalizadas</a>
             <a href="#">Clases grupales</a>
-        </nav>
+        </nav> --}}
         <div class="header-profile">
             <p>Hola, <span>Rafael</span> :)</p>
             <img src="profile-picture.jpg" alt="Foto de perfil">
         </div>
     </header>
+
+    <div class="page-title">
+        <h2>Entrenador Dashboard</h2>
+    </div>
 
     <main>
         <section class="vip-member-section">
@@ -46,7 +50,7 @@
             </div>
 
             <div class="add-vip-member">
-                <h3>Agregar miembro VIP</h3>
+                <h3>Ver miembro VIP</h3>
                 <form>
                     <div class="member-status">
                         <label>Estado</label>
@@ -54,15 +58,15 @@
                     </div>
                     <div class="member-info">
                         <label>Nombre</label>
-                        <input type="text" placeholder="Alejandra">
+                        <input type="text" placeholder="Ingrid" readonly>
                         <label>Apellido Paterno</label>
-                        <input type="text" placeholder="Martínez">
+                        <input type="text" placeholder="Mendoza" readonly>
                         <label>Apellido Materno</label>
-                        <input type="text" placeholder="Campos">
+                        <input type="text" placeholder="Campos" readonly>
                         <label>Tipo de membresía</label>
-                        <input type="text" placeholder="Plan normal">
+                        <input type="text" placeholder="Plan normal" readonly>
                         <label>Fecha de pago</label>
-                        <input type="text" placeholder="9/12/24">
+                        <input type="text" placeholder="9/12/24" readonly>
                     </div>
                     <img src="member-photo.jpg" alt="Foto de miembro">
                 </form>
@@ -85,13 +89,13 @@
                             <td>3:30pm - 5:00pm</td>
                             <td>Laura M.</td>
                             <td>Pérdida de peso A</td>
-                            <td><button class="details-button">Ver detalles &#9654;</button></td>
+                            {{-- <td><button class="details-button">Ver detalles &#9654;</button></td> --}}
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div class="group-classes">
+            {{-- <div class="group-classes">
                 <h3>Próximas clases grupales</h3>
                 <table>
                     <thead>
@@ -108,10 +112,10 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div> --}}
         </section>
 
-        <section class="assign-section">
+        {{-- <section class="assign-section">
             <form>
                 <label for="entrenamiento">Seleccionar el tipo de entrenamiento</label>
                 <select id="entrenamiento" name="entrenamiento">
@@ -120,7 +124,7 @@
                 </select>
                 <button type="submit" class="assign-button">Asignar &#10003;</button>
             </form>
-        </section>
+        </section> --}}
     </main>
     
     <footer>
