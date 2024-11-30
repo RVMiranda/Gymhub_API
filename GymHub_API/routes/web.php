@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\ApiProxyController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\EntrenadorController;
 use App\Http\Controllers\HorariosController;
 use App\Http\Controllers\RecepcionistaController;
@@ -15,15 +17,6 @@ use App\Http\Controllers\RegistroAsistenciasController;
 // });
 
 //extensiones para el navegador 
-
-//ruta de prueba
-Route::get('/eduardinho', [HomeController::class, 'Eduardo']);
-
-
-// vista de inicio de sesion para usuarios
-Route::get('/home-dashboard', [HomeController::class, 'Home']);
-
-Route::get('/home-login', [HomeController::class, 'HomeLogin']);
 
 // aqui muestra la vista de login para los gym owner
 Route::get('/login', [loginController::class, 'login']);
@@ -39,8 +32,27 @@ Route::post('/cliente/registrar-asistencia', [RegistroAsistenciasController::cla
 //ruta para obtener mis horarios de clases grupales
 Route::get('/horarios/ver-clases', [HorariosController::class, 'horarios'])->name('horarios.horarios');
 
+//ruta para obtener los clientes de los ultimos 3 meses
+Route::get('/clientes/nuevos/tres-meses', [ClienteController::class, 'nuevosClientesUltimosTresMeses']);
+
+//ruta para obtener los clientes activos de los ultimos 3 meses
+Route::get('clientes/activos/tres-meses', [ContratoController::class, 'obtenerClientesActivosUltimosMeses']);
+
+//ruta para obtener las cancelaciones del ultimo mes
+Route::get('clientes/cancelaciones/mes', [ContratoController::class, 'obtenerCancelacionesMes']);
+
+//ruta para obtener las renovaciones del mes
+Route::get('clientes/renovaciones/mes', [ContratoController::class, 'obtenerRenovacionesMes']);
+
+
+
+
 
 //vistas
+// vista de inicio de sesion para usuarios
+Route::get('/home-dashboard', [HomeController::class, 'Home']);
+Route::get('/home-login', [HomeController::class, 'HomeLogin']);
 Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('administrador.dashboard');
+Route::get('/admin/entrenador', [AdminController::class, 'entrenador'])->name('administrador.entrenador');
 Route::get('/entrenador/dashboard', [EntrenadorController::class, 'dashboard'])->name('entrenador.dashboard');
 Route::get('/recepcionista/dashboard', [RecepcionistaController::class, 'dashboard'])->name('recepcionista.dashboard');

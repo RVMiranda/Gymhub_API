@@ -15,92 +15,66 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/admindashboard.css') }}">
     <link rel="stylesheet" href="{{ asset('styles/fonts/Satoshi/WEB/css/satoshi.css') }}">
-    @vite(['resources/js/homelogin.js'])
+    @vite(['resources/js/admindashboard.js'])
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
 </head>
 <body>
-    <header>
-        <div class="header-logo">
-            <h1>GYMHUB</h1>
+    <div class="navbar">
+        <div class="logo">
+            
+            <h1 id="logo" class="inter"><img src="{{ asset('styles/resources/P0.png') }}" alt=""> GYMHUB <img src="{{ asset('styles/resources/P1.png') }}" alt=""></h1>
         </div>
-        <nav class="nav-menu">
-            {{-- <a href="#">Inicio</a>
-            <a href="#">Entrenadores</a>
-            <a href="#">Trabajadores</a>
-            <a href="#">Membresías</a>
-            <a href="#">Marketing</a>
-            <a href="#">Facturación</a> --}}
-        </nav>
-        {{-- <nav class="nav-menu">
-            <a href="{{ route('admin/dashboard') }}" class="{{ request()->is('inicio') ? 'active' : '' }}">Inicio</a>
-            <a href="{{ route('entrenadores') }}" class="{{ request()->is('entrenadores') ? 'active' : '' }}">Entrenadores</a>
-            <a href="{{ route('trabajadores') }}" class="{{ request()->is('trabajadores') ? 'active' : '' }}">Trabajadores</a>
-            <a href="{{ route('membresias') }}" class="{{ request()->is('membresias') ? 'active' : '' }}">Membresías</a>
-            <a href="{{ route('marketing') }}" class="{{ request()->is('marketing') ? 'active' : '' }}">Marketing</a>
-            <a href="{{ route('facturacion') }}" class="{{ request()->is('facturacion') ? 'active' : '' }}">Facturación</a>
-        </nav> --}}
-        
-        <div class="header-profile">
-            <p>Hola, <span>Diego</span> :)</p>
-            <img src="profile-picture.jpg" alt="Foto">
+        <div class="navbar-opt">
+            <a href="" class="navbar-opt-on n-Inicio">Inicio</a>
+            <a href="" class="navbar-opt-off n-Entrenadores">Entrenadores</a>
+            <a href="" class="navbar-opt-off n-Trabajadores">Trabajadores</a>
+            <a href="" class="navbar-opt-off n-Membresias">Membresías</a>
         </div>
-    </header>
-    
-    <div class="page-title">
-        <h2>Administrador Dashboard</h2>
+        <div class="Profile">
+            <p>¡Hola, <strong>Diego</strong>!</p>
+            <img class="Profile-photo" src="{{ asset('styles/resources/examplephoto.png') }}" alt="Foto de perfil">
+        </div>
     </div>
-
-    <main>
-        {{-- <aside class="sidebar">
-            <button class="sidebar-button" title="Resumen">
-                <i class="icon">&#8962;</i>
-            </button>
-            <button class="sidebar-button" title="Clases">
-                <i class="icon">&#128170;</i>
-            </button>
-            <button class="sidebar-button" title="Pagos">
-                <i class="icon">&#128179;</i>
-            </button>
-            <button class="sidebar-button" title="Ubicación">
-                <i class="icon">&#128205;</i>
-            </button>
-        </aside> --}}
-        
-        <section class="dashboard">
-            <div class="dashboard-card">
-                <h3>23</h3>
-                <p>Cancelaciones en este mes</p>
-                {{-- <img src="chart1.png" alt="Gráfica de cancelaciones">
-                <span>Ultimos 3 meses</span> --}}
+    <div class="ellipse1"></div>
+    <div class="body">
+        <div class="grid1">
+            <div class="G_Style_S G_Cancelaciones">
+                <p id="G_Dato">23</p>
+                <p id="G_Nombre">Cancelaciones en este mes</p>
+                <div id="G_Grafica"></div>
+                <p id="G_Footer">Últimos 3 meses</p>
             </div>
-            <div class="dashboard-card">
-                <h3>63</h3>
-                <p>Renovaciones en este mes</p>
-                {{-- <img src="chart2.png" alt="Gráfica de renovaciones">
-                <span>Ultimos 3 meses</span> --}}
+            <div class="G_Style_S G_Renovaciones">
+                <p id="G_Dato" class="D_renovaciones_mes">63</p>
+                <p id="G_Nombre">Renovaciones en este mes</p>
+                <div id="G_Grafica" class="G_renovaciones_mes"></div>
+                <p id="G_Footer">Últimos 3 meses</p>
             </div>
-            <div class="dashboard-card">
-                <h3>24</h3>
-                <p>Nuevos miembros en este mes</p>
-                {{-- <img src="chart3.png" alt="Gráfica de nuevos miembros">
-                <span>Ultimos 3 meses</span> --}}
+            <div class="G_Style_S G_Nuevos">
+                <p id="G_Dato" class="D_nuevos_3_meses">24</p>
+                <p id="G_Nombre">Nuevos miembros en este mes</p>
+                <div id="G_Grafica" class="G_nuevos_3_meses"></div>
+                <p id="G_Footer">Últimos 3 meses</p>
             </div>
-            <div class="dashboard-card">
-                <h3>2,154</h3>
-                <p>Miembros activos</p>
-                {{-- <img src="chart4.png" alt="Gráfica de miembros activos">
-                <span>Ultimos 6 meses</span> --}}
+        </div>
+        <div class="grid2">
+            <div class="G_Style_B">
+                <p id="G_Dato_B" class="D_activos">2,154</p>
+                <p id="G_Nombre_B">Miembros activos</p>
+                <div id="G_Grafica_B" class="G_activos"></div>
+                <p id="G_Footer_B">Últimos 6 meses</p>
             </div>
-            <div class="dashboard-card">
-                <h3>$184,050 mxn</h3>
-                <p>Ingresos generados este mes</p>
-                {{-- <img src="chart5.png" alt="Gráfica de ingresos">
-                <span>Ultimos 6 meses</span> --}}
+            <div class="G_Style_B">
+                <p id="G_Dato_B" class="D_cancelaciones_mes">23</p>
+                <p id="G_Nombre_B">Cancelaciones en este mes</p>
+                <div id="G_Grafica_B" class="G_cancelaciones_mes"></div>
+                <p id="G_Footer_B">Últimos 3 meses</p>
             </div>
-        </section>
+        </div>
+    </div>
     </main>
     
-    <footer>
-        <p>© 2024 Todos los derechos reservados.</p>
-    </footer>
 </body>
 </html>
