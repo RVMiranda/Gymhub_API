@@ -8,7 +8,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
 
-class gymownderSeeder extends Seeder
+class GymOwnerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -49,6 +49,6 @@ class gymownderSeeder extends Seeder
         $gym_owner->client_id = $client_id;
         $gym_owner->email = 'PowerG@gmail.com';
         $gym_owner->password = Hash::make('texas12');
-        $gym_owner->save(); 
+        $gym_owner->save();
     }
 }

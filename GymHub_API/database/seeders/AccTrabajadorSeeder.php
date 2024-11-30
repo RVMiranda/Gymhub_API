@@ -22,22 +22,22 @@ class AccTrabajadorSeeder extends Seeder
         ]);
         
         //administrador
-        $AccesoTrabajador = new AccesoTrabajador();
-        $AccesoTrabajador->usuario = 'diegoH';
-        $AccesoTrabajador->password = Hash::make('d1234');
-        $AccesoTrabajador->id_trabajador = 1;
-        $AccesoTrabajador->id_tipo_acceso = 1;
+        $accesoTrabajador = new AccesoTrabajador();
+        $accesoTrabajador->usuario = 'diegoH';
+        $accesoTrabajador->password = Hash::make('d1234');
+        $accesoTrabajador->id_trabajador = 1;
+        $accesoTrabajador->id_tipo_acceso = 1;
 
-        $AccesoTrabajador->save();
+        $accesoTrabajador->save();
 
         //entrenador
-        $AccesoTrabajador = new AccesoTrabajador();
-        $AccesoTrabajador->usuario = 'EdPerez';
-        $AccesoTrabajador->password = Hash::make('e1234');
-        $AccesoTrabajador->id_trabajador = 2;
-        $AccesoTrabajador->id_tipo_acceso = 2;
+        $accesoTrabajador = new AccesoTrabajador();
+        $accesoTrabajador->usuario = 'EdPerez';
+        $accesoTrabajador->password = Hash::make('e1234');
+        $accesoTrabajador->id_trabajador = 2;
+        $accesoTrabajador->id_tipo_acceso = 2;
 
-        $AccesoTrabajador->save();
+        $accesoTrabajador->save();
 
     }
 }

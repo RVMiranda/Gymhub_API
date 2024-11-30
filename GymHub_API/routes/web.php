@@ -3,7 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\loginController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ApiProxyController;
 use App\Http\Controllers\EntrenadorController;
 use App\Http\Controllers\RecepcionistaController;
@@ -15,16 +15,16 @@ use App\Http\Controllers\RecepcionistaController;
 //extensiones para el navegador 
 
 //ruta de prueba
-Route::get('/eduardinho', [HomeController::class, 'Eduardo']);
+Route::get('/eduardinho', [HomeController::class, 'eduardo']);
 
 
 // vista de inicio de sesion para usuarios
-Route::get('/home-dashboard', [HomeController::class, 'Home']);
+Route::get('/home-dashboard', [HomeController::class, 'home']);
 
-Route::get('/home-login', [HomeController::class, 'HomeLogin']);
+Route::get('/home-login', [HomeController::class, 'homeLogin']);
 
 // aqui muestra la vista de login para los gym owner
-Route::get('/login', [loginController::class, 'login']);
+Route::get('/login', [LoginController::class, 'login']);
 // ruta para solicitar el login del gym owner
 Route::post('/login', [ApiProxyController::class, 'login'])->name('login');
 

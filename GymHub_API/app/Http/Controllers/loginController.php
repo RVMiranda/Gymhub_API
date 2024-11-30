@@ -7,7 +7,7 @@ use App\Models\GymOwner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
-class loginController extends Controller
+class LoginController extends Controller
 {
     public function login(){
         return view('logingym');
@@ -37,7 +37,7 @@ class loginController extends Controller
                     'email' => $gymOwner->email,
                 ]
             ], 200);
-        } else {    
+        } else {
             return response()->json([
                 'status' => 'error',
                 'message' => 'Credenciales incorrectas'
@@ -65,7 +65,7 @@ class loginController extends Controller
                 'usuario' => $accesoTrabajador->usuario,
             ]
         ], 200);
-    } else {    
+    } else {
         return response()->json([
             'status' => 'error',
             'message' => 'Credenciales incorrectas'

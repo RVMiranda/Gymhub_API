@@ -7,17 +7,15 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     //
-    public function Eduardo(){
+    public function eduardo(){
         return "Eduardo es un tremendo gilipollas";
     }
 
-    public function Home(){
-        //return view('homelogin');
+    public function home(){
         return view('homedashboard');
     }
 
-    public function HomeLogin(){
-        //return view('homelogin');
+    public function homeLogin(){
         return view('homelogin');
     }
 }
