@@ -8,4 +8,9 @@ class Clase extends Model
 {
     //
     protected $table = 'clase';
+
+    public function clasesConClientes()
+    {
+        return $this->hasMany(ClaseConClientes::class, 'id_clase');
+    }
 }

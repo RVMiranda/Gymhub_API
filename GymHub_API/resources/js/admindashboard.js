@@ -325,8 +325,96 @@ function graficarRenovaciones(renovacionesData) {
         }
     });
 }
+
+async function obtenerGananciasMensuales() {
+    try {
+        const response = await fetch('/pagos/ganancias/mes'); // Ruta que apunta a la API creada
+        const data = await response.json();
+
+        if (data.status === 'ok') {
+            // Llamar a la función que genera la gráfica, pasando los datos recibidos directamente
+            graficarGanancias(data.data);
+        } else {
+            console.warn('Respuesta de la API no es "ok".');
+        }
+    } catch (error) {
+        console.error('Error al obtener las ganancias mensuales:', error);
+    }
+}
+
+
+
+function graficarGanancias(gananciasData) {
+    console.log('Datos de ganancias recibidos:', gananciasData);
+
+    // Obtener referencias al contenedor del gráfico y al elemento que muestra el dato de ganancias
+    const graficaContenedor = document.querySelector('.G_ganancias_mes');
+    const datoElemento = document.querySelector('.D_ganancias_mes');
+
+    // Verificar que el contenedor del gráfico exista en el DOM
+    if (!graficaContenedor) {
+        console.error('Error: El contenedor del gráfico no fue encontrado.');
+        return;
+    }
+
+    // Limpiar el contenedor para el gráfico por si existe alguno previo
+    graficaContenedor.innerHTML = '';
+
+    // Crear un canvas para Chart.js dentro del contenedor gráfico
+    const canvas = document.createElement('canvas');
+    graficaContenedor.appendChild(canvas);
+
+    // Crear los arrays para las etiquetas y los datos de la gráfica
+    const labels = [];
+    const valores = [];
+
+    // Recorrer los datos para llenar las etiquetas y valores
+    if (gananciasData && Array.isArray(gananciasData)) {
+        gananciasData.forEach(ganancia => {
+            labels.push(`${ganancia.month}/${ganancia.year}`);
+            valores.push(parseFloat(ganancia.total_ganancia));
+        });
+    }
+
+    // Mostrar el total de ganancias del mes actual
+    if (gananciasData.length > 0) {
+        const totalGananciaActual = gananciasData[gananciasData.length - 1]?.total_ganancia;
+        datoElemento.innerText = totalGananciaActual ? parseFloat(totalGananciaActual).toFixed(2) : '0';
+    } else {
+        datoElemento.innerText = '0';
+    }
+
+    // Crear la gráfica con Chart.js
+    if (labels.length > 0 && valores.length > 0) {
+        new Chart(canvas, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Ganancias por Mes',
+                    data: valores,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    } else {
+        console.warn('No hay datos suficientes para graficar las ganancias.');
+    }
+}
+
+
 // Ejecutar la función cuando la página esté completamente cargada
 obtenerNuevosClientes();
 obtenerClientesActivosUltimosMeses();
 obtenerCancelacionesMes();
 obtenerRenovacionesMes();
+obtenerGananciasMensuales();

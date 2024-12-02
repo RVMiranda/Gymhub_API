@@ -13,14 +13,14 @@
         </style>
     @endif
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/admindashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/adminentrenador.css') }}">
     <link rel="stylesheet" href="{{ asset('styles/fonts/Satoshi/WEB/css/satoshi.css') }}">
-    @vite(['resources/js/homelogin.js'])
+    @vite(['resources/js/admin_entrenador.js'])
 </head>
     <body>
         <div class="navbar">
             <div class="logo">
-                <h1 id="logo" class="inter"><img src="./resources/P0.png" alt=""> GYMHUB <img src="./resources/P1.png" alt=""></h1>
+                <h1 id="logo" class="inter"><img src="{{ asset('styles/resources/P0.png') }}" alt=""> GYMHUB <img src="{{ asset('styles/resources/P1.png') }}" alt=""></h1>
             </div>
             <div class="navbar-opt">
                 <a href="" class="navbar-opt-off n-Inicio">Inicio</a>
@@ -30,7 +30,7 @@
             </div>
             <div class="Profile">
                 <p>¡Hola, <strong>Diego</strong>!</p>
-                <img class="Profile-photo" src="./resources/examplephoto.png" alt="Foto de perfil">
+                <img class="Profile-photo" src="{{ asset('styles/resources/examplephoto.png') }}" alt="Foto de perfil">
             </div>
         </div>
         <div class="ellipse1"></div>

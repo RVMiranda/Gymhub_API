@@ -41,9 +41,9 @@
     <div class="body">
         <div class="grid1">
             <div class="G_Style_S G_Cancelaciones">
-                <p id="G_Dato">23</p>
+                <p id="G_Dato" class="D_cancelaciones_mes">23</p>
                 <p id="G_Nombre">Cancelaciones en este mes</p>
-                <div id="G_Grafica"></div>
+                <div id="G_Grafica" class="G_cancelaciones_mes"></div>
                 <p id="G_Footer">Últimos 3 meses</p>
             </div>
             <div class="G_Style_S G_Renovaciones">
@@ -64,12 +64,12 @@
                 <p id="G_Dato_B" class="D_activos">2,154</p>
                 <p id="G_Nombre_B">Miembros activos</p>
                 <div id="G_Grafica_B" class="G_activos"></div>
-                <p id="G_Footer_B">Últimos 6 meses</p>
+                <p id="G_Footer_B">Últimos 3 meses</p>
             </div>
             <div class="G_Style_B">
-                <p id="G_Dato_B" class="D_cancelaciones_mes">23</p>
-                <p id="G_Nombre_B">Cancelaciones en este mes</p>
-                <div id="G_Grafica_B" class="G_cancelaciones_mes"></div>
+                <p id="G_Dato_B"  class="D_ganancias_mes">23</p>
+                <p id="G_Nombre_B">Ganancias en este mes</p>
+                <div id="G_Grafica_B" class="G_ganancias_mes" ></div>
                 <p id="G_Footer_B">Últimos 3 meses</p>
             </div>
         </div>

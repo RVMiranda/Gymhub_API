@@ -9,6 +9,7 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ContratoController;
 use App\Http\Controllers\EntrenadorController;
 use App\Http\Controllers\HorariosController;
+use App\Http\Controllers\PagoController;
 use App\Http\Controllers\RecepcionistaController;
 use App\Http\Controllers\RegistroAsistenciasController;
 
@@ -43,6 +44,15 @@ Route::get('clientes/cancelaciones/mes', [ContratoController::class, 'obtenerCan
 
 //ruta para obtener las renovaciones del mes
 Route::get('clientes/renovaciones/mes', [ContratoController::class, 'obtenerRenovacionesMes']);
+
+//ruta para obtener las ganancias del mes
+Route::get('pagos/ganancias/mes', [PagoController::class, 'obtenerGananciasMes']);
+
+
+Route::get('entrenadores/get/all', [EntrenadorController::class, 'getAllEntrenadores']);
+
+Route::get('entrenadores/get/clases-personalizadas', [EntrenadorController::class, 'obtenerEntrenadoresConClientesYClases']);
+
 
 
 
